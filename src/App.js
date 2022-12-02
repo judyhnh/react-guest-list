@@ -1,3 +1,4 @@
+import './App.css';
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -88,64 +89,76 @@ function App() {
   };
 
   return (
-    <>
-      <h1>Guest List</h1>
-      <form onSubmit={submitHandler}>
-        <label>
-          <input
-            placeholder="First Name"
-            value={firstName}
-            onChange={(event) => setFirstName(event.target.value)}
-            // disabled={isLoading ? 'disabled' : ''}
-          />
-        </label>
-        <label>
-          <input
-            placeholder="Last Name"
-            value={lastName}
-            onChange={(event) => setLastName(event.target.value)}
-            // disabled={isLoading ? 'disabled' : ''}
-          />
-        </label>
-        <button>Add Guest</button>
-      </form>
-      <div>
-        {isLoading ? (
-          'Loading...'
-        ) : (
-          <ul>
-            {guestList.map((guest) => {
-              return (
-                <div key={guest.id}>
-                  <li>
-                    <div>
-                      {guest.firstName} {guest.lastName}
-                      <input
-                        type="checkbox"
-                        checked={guest.attending}
-                        onChange={(event) => {
-                          changeStatusAttending(
-                            guest.id,
-                            event.currentTarget.checked,
-                          ).catch(() => {});
-                        }}
-                      />
-                      {guest.attending ? '👍' : '👎'}{' '}
-                    </div>
-                    <button onClick={() => deleteGuest(guest.id)}>
-                      Remove
-                    </button>
-                  </li>
-                </div>
-              );
-            })}
-          </ul>
-        )}
+    <div className="wrapper">
+      <div className="container">
+        <h1>GUEST LIST</h1>
+        <div className="formStyle">
+          <form onSubmit={submitHandler}>
+            <label>
+              <input
+                placeholder="First Name"
+                value={firstName}
+                required
+                onChange={(event) => setFirstName(event.target.value)}
+                // disabled={isLoading ? 'disabled' : ''}
+              />
+            </label>
+            <label>
+              <input
+                placeholder="Last Name"
+                value={lastName}
+                required
+                onChange={(event) => setLastName(event.target.value)}
+                // disabled={isLoading ? 'disabled' : ''}
+              />
+            </label>
+            <button className="addBtn">ADD Guest</button>
+            <button className="removeBtn" onClick={() => deleteAllGuests()}>
+              REMOVE all
+            </button>
+          </form>
+        </div>
+        <div>
+          {isLoading ? (
+            'Loading...'
+          ) : (
+            <ul>
+              {guestList.map((guest) => {
+                return (
+                  <div key={guest.id} className="entryContainer">
+                    <li>
+                      <div className="detailStyle">
+                        <div className="nameStyle">
+                          {guest.firstName} {guest.lastName}
+                        </div>
+                        <input
+                          type="checkbox"
+                          checked={guest.attending}
+                          onChange={(event) => {
+                            changeStatusAttending(
+                              guest.id,
+                              event.currentTarget.checked,
+                            ).catch(() => {});
+                          }}
+                        />
+                        is attending: {guest.attending ? '👍' : '👎'}
+                      </div>
+                      <button
+                        className="removeOneBtn"
+                        onClick={() => deleteGuest(guest.id)}
+                      >
+                        Remove
+                      </button>
+                    </li>
+                  </div>
+                );
+              })}
+            </ul>
+          )}
+        </div>
+        <div></div>
       </div>
-      <div>
-        <button onClick={() => deleteAllGuests()}>Remove everyone</button>
-      </div>
-    </>
+    </div>
   );
 }
 export default App;

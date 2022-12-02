@@ -1,0 +1,121 @@
+* {
+  font-family: 'Marker Felt';
+}
+
+.wrapper {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  margin: 200px 350px;
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  height: 50vh;
+  align-items: center;
+  background: radial-gradient(#f6c 15%, rgba(0, 0, 0, 0) 16%),
+    radial-gradient(#6cf 15%, rgba(0, 0, 0, 0) 16%), #fc0;
+  background-position: 0 0, 30px 30px;
+  background-origin: padding-box;
+  background-clip: border-box;
+  background-size: 60px 60px;
+  border-radius: 40px;
+  border: 5px solid rgba(240, 46, 170, 0.4);
+  box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px,
+    rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px,
+    rgba(240, 46, 170, 0.05) 0px 25px;
+}
+
+.formStyle {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  height: 50px;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+input {
+  margin: 13px 5px 5px 12px;
+  background-color: white;
+  border-radius: 8px;
+  text-align: center;
+  border: 2px solid rgb(60, 59, 59);
+  padding: 3px;
+  letter-spacing: 2px;
+}
+
+input:focus {
+  background-color: pink;
+  outline: none;
+  border: 2px solid white;
+}
+
+h1 {
+  color: rgba(255, 105, 180, 0.7);
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+  letter-spacing: 4px;
+  font-family: 'Sacramento', sans-serif;
+}
+
+button {
+  font-family: 'Sacramento', sans-serif;
+}
+.addBtn {
+  background-color: rgba(25, 201, 255, 0.5);
+  width: 100px;
+  padding: 3px 0;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  margin-left: 5px;
+}
+.addBtn:hover {
+  background-color: rgb(25, 201, 255);
+  cursor: pointer;
+}
+
+.removeBtn {
+  background-color: rgba(250, 39, 98, 0.5);
+  width: 100px;
+  padding: 3px 0;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  margin-left: 5px;
+}
+
+.removeBtn:hover {
+  background-color: rgba(250, 39, 98);
+  cursor: pointer;
+}
+
+.entryContainer {
+  margin-top: 15px;
+  background-color: hotpink;
+  width: 500px;
+}
+
+.detailStyle {
+  background-color: green;
+  align-items: center;
+  display: flex;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.nameStyle {
+  width: 350px;
+  margin-left: 10px;
+}
+
+.removeOneBtn {
+  background-color: lightcoral;
+}
