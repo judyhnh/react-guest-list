@@ -131,23 +131,26 @@ function App() {
                         <div className="nameStyle">
                           {guest.firstName} {guest.lastName}
                         </div>
-                        <input
-                          type="checkbox"
-                          checked={guest.attending}
-                          onChange={(event) => {
-                            changeStatusAttending(
-                              guest.id,
-                              event.currentTarget.checked,
-                            ).catch(() => {});
-                          }}
-                        />
-                        is attending: {guest.attending ? '👍' : '👎'}
+                        <div className="checkboxStyle">
+                          <input
+                            type="checkbox"
+                            checked={guest.attending}
+                            onChange={(event) => {
+                              changeStatusAttending(
+                                guest.id,
+                                event.currentTarget.checked,
+                              ).catch(() => {});
+                            }}
+                          />
+                          is attending:
+                        </div>
+                        <p>{guest.attending ? '👍' : '👎'}</p>
                       </div>
                       <button
                         className="removeOneBtn"
                         onClick={() => deleteGuest(guest.id)}
                       >
-                        Remove
+                        UNinvite
                       </button>
                     </li>
                   </div>

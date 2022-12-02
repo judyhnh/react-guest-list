@@ -1,4 +1,5 @@
 * {
+  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
   font-family: 'Marker Felt';
 }
 
@@ -9,11 +10,11 @@
 }
 
 .container {
-  margin: 200px 350px;
+  margin: 50px 350px;
   display: flex;
   flex-direction: column;
   width: 50vw;
-  height: 50vh;
+  height: 80vh;
   align-items: center;
   background: radial-gradient(#f6c 15%, rgba(0, 0, 0, 0) 16%),
     radial-gradient(#6cf 15%, rgba(0, 0, 0, 0) 16%), #fc0;
@@ -96,13 +97,15 @@ button {
 }
 
 .entryContainer {
-  margin-top: 15px;
-  background-color: hotpink;
+  margin-top: 20px;
+  background-color: whitesmoke;
   width: 500px;
+  height: 100px;
+  border-radius: 15px;
+  margin-right: 30px;
 }
 
 .detailStyle {
-  background-color: green;
   align-items: center;
   display: flex;
 }
@@ -112,10 +115,32 @@ ul {
 }
 
 .nameStyle {
-  width: 350px;
-  margin-left: 10px;
+  width: 280px;
+  margin-left: 40px;
+  font-size: 25px;
 }
 
 .removeOneBtn {
-  background-color: lightcoral;
+  background-color: rgba(240, 128, 128, 0.9);
+  margin-left: 30px;
+  height: 30px;
+  width: 100px;
+  border-radius: 20px;
+  border: 2px solid whitesmoke;
+  color: whitesmoke;
+}
+
+.removeOneBtn:hover {
+  cursor: pointer;
+  background-color: rgb(244, 34, 34);
+  letter-spacing: 2px;
+}
+
+p {
+  font-size: 25px;
+  margin-right: 8px;
+}
+
+.checkboxStyle {
+  width: 120px;
 }
